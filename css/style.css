@@ -139,7 +139,6 @@ span {
 
 .home-content p {
 	font-size: 2rem;
-	color: var(--bg-color);
 }
 
 .social-media a {
@@ -212,6 +211,7 @@ span {
 .about-content p {
 	font-size: 2rem;
 	margin: 2rem 0 3rem;
+	color: var(--bg-color);
 }
 
 /* Services Style Section */
