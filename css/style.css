@@ -139,6 +139,7 @@ span {
 
 .home-content p {
 	font-size: 2rem;
+	color: var(--bg-color);
 }
 
 .social-media a {
