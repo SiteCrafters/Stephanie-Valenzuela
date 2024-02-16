@@ -1,245 +1,512 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Steph Project</title>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
-		<!-- box icons -->
-		<link
-			href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
-			rel="stylesheet"
-		/>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-decoration: none;
+	border: none;
+	outline: none;
+	scroll-behavior: smooth;
+	font-family: "Poppins", sans-serif;
+}
+/* Varibles */
+:root {
+	--bg-color: #f8d56c;
+	/* --bg-color: #ffc107; */
+	--second-bg-color: #57513a;
+	--text-color: #477697;
+	--text-color2: #505153;
+	--main-color: rgb(19, 122, 28);
+}
 
-		<link
-			rel="stylesheet"
-			href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-		/>
+*::selection {
+	background: var(--main-color);
+	color: var(--bg-color);
+}
 
-		<!-- custom css -->
-		<link rel="stylesheet" href="css/style.css" />
-	</head>
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+}
 
-	<body>
-		<!-- Header design -->
-		<header class="header">
-			<div class="bx bx-menu" id="menu-icon"></div>
+body {
+	background: var(--bg-color);
+	color: var(--text-color);
+}
 
-			<nav class="navbar">
-				<a href="#home" class="active">Home</a>
-				<a href="#about">About</a>
-				<a href="#services">Services</a>
-				<a href="#portfolio">Testimonies</a>
-				<a href="#contact">Contact</a>
-			</nav>
-		</header>
+section {
+	min-height: 100vh;
+	padding: 10rem 9% 2rem;
+}
 
-		<!-- Home design section  -->
-		<section class="home" id="home">
-			<div class="home-content">
-				<a href="#" class="logo">Sessions with Steph</a>
-				<h3>Hello, I'm</h3>
-				<h1>Stephanie Valenzuela</h1>
-				<h3><span class="multiple-text"></span></h3>
-				<p class="p-text">
-					As a certified hypnotherapist with a passion for helping
-					individuals overcome their challenges and achieve their
-					goals, I offer personalized hypnotherapy sessions tailored
-					to each client's needs.
-				</p>
-				<div class="social-media">
-					<a href="#"><i class="bx bxl-facebook"></i></a>
-					<!-- <a href="#"><i class="bx bxl-twitter"></i></a>
-					<a href="#"><i class="bx bxl-instagram-alt"></i></a>
-					<a href="#"><i class="bx bxl-linkedin"></i></a> -->
-				</div>
-			</div>
+.header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 2rem 9%;
+	background: var(--bg-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 100;
+}
 
-			<div class="home-img">
-				<img src="images/about.jpg" width="auto" alt="" />
-			</div>
-		</section>
+.header.sticky {
+	border-bottom: 0.1rem solid rgba(0, 0, 0, 0.2);
+}
 
-		<!-- About design section  -->
-		<section class="about" id="about">
-			<div class="about-img">
-				<img src="images/home.jpeg" alt="" />
-			</div>
+.logo {
+	font-family: cursive, poppins;
+	font-size: 5rem;
+	color: var(--main-color);
+	font-weight: 800;
+}
 
-			<div class="about-content">
-				<h2 class="heading"><span>About Me</span></h2>
-				<p class="p-text">
-					As a mother, I embody the nurturing essence of unconditional
-					love, tirelessly tending to the needs of my children with
-					boundless patience and compassion. Yet, beyond the role of a
-					devoted parent, I seamlessly transition into the realms of
-					hypnotherapy and hairstyling, each demanding its unique set
-					of skills and sensitivity. In my hypnotherapy practice, I
-					guide my clients through profound inner journeys, helping
-					them unlock the depths of their subconscious minds to heal
-					and grow. With gentle words and a soothing presence, I
-					empower them to confront their fears, break free from
-					limiting beliefs, and embrace positive change. In my
-					bustling salon, I transform my clients not just through the
-					artistry of hair styling, but through genuine connections
-					and heartfelt conversations. Every snip of the scissors
-					becomes a symbol of transformation, as I infuse confidence
-					and beauty into each individual I touch. Whether calming
-					anxious minds or crafting stunning new looks, I epitomize
-					the multifaceted brilliance of a woman who nurtures both
-					body and soul.
-				</p>
-			</div>
-		</section>
+.navbar a {
+	font-size: 1.7rem;
+	color: var(--text-color);
+	margin-left: 4rem;
+	transition: 0.3s;
+}
 
-		<!-- Services design section  -->
-		<section class="services" id="services">
-			<h2 class="heading"><span>My Services</span></h2>
+.navbar a:hover,
+.navbar a.active {
+	color: var(--main-color);
+}
 
-			<div class="services-container">
-				<div class="services-box">
-					<i class="bx bx-code-alt"></i>
-					<h3>Lorem Sequi dignissimos</h3>
-					<p class="p-text">
-						Lorem ipsum dolor sit amet, consectetur adipisicing
-						elit. Sequi dignissimos vitae magni aut commodi non
-						laborum nisi alias iusto voluptatibus.
-					</p>
-					<!-- <a href="#" class="btn">Read More</a> -->
-				</div>
+#menu-icon {
+	font-size: 3.6rem;
+	color: var(--text-color);
+	display: none;
+}
 
-				<div class="services-box">
-					<i class="bx bxs-paint"></i>
-					<h3>Laborum Nisi</h3>
-					<p class="p-text">
-						Lorem ipsum dolor sit amet, consectetur adipisicing
-						elit. Sequi dignissimos vitae magni aut commodi non
-						laborum nisi alias iusto voluptatibus.
-					</p>
-				</div>
+/* Home Style Section */
+.home {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
 
-				<div class="services-box">
-					<i class="bx bx-bar-chart-alt"></i>
-					<h3>Vitae Magni aut Commodi</h3>
-					<p class="p-text">
-						Lorem ipsum dolor sit amet, consectetur adipisicing
-						elit. Sequi dignissimos vitae magni aut commodi non
-						laborum nisi alias iusto voluptatibus.
-					</p>
-					<!-- <a href="#" class="btn">Read More</a> -->
-				</div>
-			</div>
-		</section>
+.p-text {
+	color: black;
+	font-weight: 600;
+}
+.p-text2 {
+	color: whitesmoke;
+	font-weight: 600;
+}
 
-		<!-- Portfolio design section  -->
-		<section class="portfolio" id="portfolio">
-			<h2 class="heading">Latest Testimonies</h2>
+.home-img img {
+	width: 35vw;
+	animation: floatImage 4s ease-in-out infinite;
+	border-radius: 16rem;
+}
 
-			<div class="portfolio-container">
-				<div class="portfolio-box">
-					<img src="images/portfolio1.jpg" alt="" />
-					<div class="portfolio-layer">
-						<h4 class="p-text2">Steve</h4>
-						<p class="p-text2">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Maiores, ratione.
-						</p>
-					</div>
-				</div>
+@keyframes floatImage {
+	0% {
+		transform: translateY(0);
+	}
 
-				<div class="portfolio-box">
-					<img src="images/portfolio2.jpg" alt="" />
-					<div class="portfolio-layer">
-						<h4 class="p-text2">Carson</h4>
-						<p class="p-text2">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Maiores, ratione.
-						</p>
-					</div>
-				</div>
+	50% {
+		transform: translateY(-2.4rem);
+	}
 
-				<div class="portfolio-box">
-					<img src="images/portfolio3.jpg" alt="" />
-					<div class="portfolio-layer">
-						<h4 class="p-text2">Chelsea</h4>
-						<p class="p-text2">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Maiores, ratione.
-						</p>
-					</div>
-				</div>
+	100% {
+		transform: translateY(0);
+	}
+}
 
-				<div class="portfolio-box">
-					<img src="images/portfolio4.jpg" alt="" />
-					<div class="portfolio-layer">
-						<h4 class="p-text2">Samantha</h4>
-						<p class="p-text2">
-							Lorem ipsum dolor sit amet consectetur adipisicing
-							elit. Maiores, ratione.
-						</p>
-					</div>
-				</div>
+.home-content h3 {
+	font-size: 3.2rem;
+	font-weight: 700;
+}
 
-				<div class="portfolio-box">
-					<img src="images/portfolio5.jpg" alt="" />
-					<div class="portfolio-layer">
-						<h4 class="p-text2">Scott</h4>
-						<p class="p-text2">
-							Being a client of both her professions I have to say
-							that she has the most beautiful soul I have ever
-							encountered.
-						</p>
-					</div>
-				</div>
+.home-content h3:nth-of-type(2) {
+	margin-bottom: 2rem;
+}
 
-				<div class="portfolio-box">
-					<img src="images/portfolio6.jpg" alt="" />
-					<div class="portfolio-layer">
-						<h4 class="p-text2">Captain Kirk</h4>
-						<p class="p-text2">
-							Spock...Where the hell am I? Beam me up Scotty!
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
+span {
+	color: var(--main-color);
+}
 
-		<!-- Contact Design section  -->
-		<section class="contact" id="contact">
-			<div class="contact-info">
-				<h1 class="heading"><span>Get In Touch</span></h1>
-				<p><b>123 Street St.</b></p>
-				<p>
-					<b>City, State </b><span><i class="fa fa-map-marker"></i></span>
-				</p>
-				<p>
-					<b>555-555-5555 </b><span><i class="fa fa-phone"></i></span>
-				</p>
-			</div>
-		</section>
+.home-content h1 {
+	font-size: 5.6rem;
+	font-weight: 700;
+	line-height: 1.3;
+	font-family: cursive;
+}
 
-		<!-- Footer design -->
-		<footer class="footer">
-			<div class="footer-text">
-				<p class="p-text">
-					Copyright &copy; 2024 by <span><b>Stephanie Valenzuela</b></span> |
-					All Rights Reserved.
-				</p>
-			</div>
+.home-content p {
+	font-size: 2rem;
+}
 
-			<div class="footer-iconTop">
-				<a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
-			</div>
-		</footer>
+.social-media a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 4rem;
+	height: 4rem;
+	background: transparent;
+	border: 0.2rem solid var(--main-color);
+	border-radius: 50%;
+	font-size: 2rem;
+	color: var(--main-color);
+	margin: 3rem 1.5rem 3rem 0;
+	transition: 0.5s ease;
+}
 
-		<!-- scroll reveal -->
-		<script src="https://unpkg.com/scrollreveal"></script>
+.social-media a:hover {
+	background: var(--main-color);
+	color: var(--second-bg-color);
+	box-shadow: 0 0 1rem var(--main-color);
+}
 
-		<!-- typed js -->
-		<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+.btn {
+	display: inline-block;
+	padding: 1rem 2.8rem;
+	background: var(--main-color);
+	border-radius: 4rem;
+	box-shadow: 0 0 1rem var(--main-color);
+	font-size: 1.6rem;
+	color: var(--second-bg-color);
+	letter-spacing: 0.1rem;
+	font-weight: 600;
+	transition: 0.5s ease;
+}
 
-		<!-- custom js -->
-		<script src="js/script.js"></script>
-	</body>
-</html>
+.btn:hover {
+	box-shadow: none;
+}
+
+/* About Style Section */
+.about {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	background: var(--second-bg-color);
+}
+
+.about-img img {
+	width: 35vw;
+	border-radius: 18rem;
+}
+
+.heading {
+	text-align: center;
+	font-size: 4.5rem;
+	color: var(--text-color1);
+}
+
+.about-content h2 {
+	text-align: left;
+	line-height: 1.2;
+}
+
+.about-content h3 {
+	font-size: 2.6rem;
+}
+
+.about-content p {
+	font-size: 2rem;
+	margin: 2rem 0 3rem;
+	color: var(--bg-color);
+}
+
+/* Services Style Section */
+.services {
+	min-height: auto;
+	padding-bottom: 10rem;
+}
+
+.services h2 {
+	margin-bottom: 5rem;
+}
+
+.services-container {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 2rem;
+}
+
+.services-container .services-box {
+	flex: 1 1 30rem;
+	background: var(--second-bg-color);
+	padding: 3rem 2rem 4rem;
+	border-radius: 2rem;
+	text-align: center;
+	border: 0.2rem solid var(--bg-color);
+	transition: 0.5s ease;
+}
+
+.services-container .services-box:hover {
+	border-color: var(--main-color);
+	transform: scale(1.02);
+}
+
+.services-box i {
+	font-size: 7rem;
+	color: var(--main-color);
+}
+
+.services-box h3 {
+	font-size: 2.6rem;
+}
+
+.services-box p {
+	font-size: 1.6rem;
+	margin: 1rem 0 3rem;
+	color: var(--bg-color);
+}
+
+/* Portfolio Style Section */
+.portfolio {
+	background: var(--second-bg-color);
+	min-height: auto;
+	padding-bottom: 10rem;
+}
+
+.portfolio h2 {
+	margin-bottom: 4rem;
+}
+
+.portfolio-container {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	align-items: center;
+	gap: 2.5rem;
+}
+
+.portfolio-container .portfolio-box {
+	position: relative;
+	border-radius: 2rem;
+	box-shadow: 0 0 1rem var(--bg-color);
+	overflow: hidden;
+	display: flex;
+}
+
+.portfolio-box img {
+	width: 100%;
+	transition: 0.5s ease;
+}
+
+.portfolio-box:hover img {
+	transform: scale(1.1);
+}
+
+.portfolio-box .portfolio-layer {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(rgba(0, 0, 0, 0.1), var(--main-color));
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	text-align: center;
+	padding: 0 4rem;
+	transform: translateY(100%);
+	transition: 0.5s ease;
+}
+
+.portfolio-box:hover .portfolio-layer {
+	transform: translateY(0);
+}
+
+.portfolio-layer h4 {
+	font-size: 3rem;
+}
+
+.portfolio-layer p {
+	font-size: 1.6rem;
+	margin: 0.3rem 0 1rem;
+}
+
+.portfolio-layer a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	width: 5rem;
+	height: 5rem;
+	background: var(--text-color);
+	border-radius: 50%;
+}
+
+.portfolio-layer a i {
+	font-size: 2rem;
+	color: var(--second-bg-color);
+}
+
+/* Contact Style Section  */
+.contact {
+	min-height: auto;
+	padding-bottom: 7rem;
+}
+
+.contact h2 {
+	margin-bottom: 3rem;
+}
+
+.contact-info {
+	text-align: center;
+	flex-basis: 45%;
+	padding: 10px;
+	margin-bottom: 20px;
+	font-size: 3.5rem;
+	font-weight: 1200;
+
+}
+
+/* Footer */
+.footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	flex-wrap: wrap;
+	padding: 2rem 9%;
+	background: var(--second-bg-color);
+
+}
+
+.footer-text p {
+	font-size: 1.6rem;
+	font-weight:1200;
+}
+
+.footer-iconTop a {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.8rem;
+	background: var(--main-color);
+	border-radius: 0.8rem;
+	transition: 0.5s ease;
+}
+
+.footer-iconTop a:hover {
+	box-shadow: 0 0 1rem var(--main-color);
+}
+
+.footer-iconTop a i {
+	font-size: 2.4rem;
+	color: var(--second-bg-color);
+}
+
+/* BREAKPOINTS */
+@media (max-width: 1200px) {
+	html {
+		font-size: 55%;
+	}
+}
+
+@media (max-width: 991px) {
+	.header {
+		padding: 2rem 3%;
+	}
+
+	section {
+		padding: 10rem 3% 2rem;
+	}
+
+	.footer {
+		padding: 2rem 3%;
+	}
+}
+
+@media (max-width: 879px) {
+	.portfolio-container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 768px) {
+	#menu-icon {
+		display: block;
+	}
+
+	.navbar {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		width: 100%;
+		padding: 1rem 3%;
+		background: var(--bg-color);
+		border-top: 0.1rem solid rgba(0, 0, 0, 0.2);
+		box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+		display: none;
+	}
+
+	.navbar.active {
+		display: block;
+	}
+
+	.navbar a {
+		display: block;
+		font-size: 2rem;
+		margin: 3rem 0;
+	}
+
+	.home {
+		flex-direction: column;
+	}
+
+	.home-content h3 {
+		font-size: 2.6rem;
+	}
+
+	.home-content h1 {
+		font-size: 5rem;
+	}
+
+	.home-img img {
+		width: 70vw;
+		margin-top: 4rem;
+	}
+
+	.about {
+		flex-direction: column-reverse;
+	}
+
+	.about img {
+		width: 70vw;
+		margin-top: 4rem;
+	}
+}
+
+@media (max-width: 580px) {
+	.portfolio-container {
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 450px) {
+	html {
+		font-size: 50%;
+	}
+
+	.contact form .input-box input {
+		width: 100%;
+	}
+
+	.footer {
+		flex-direction: column-reverse;
+	}
+
+	.footer p {
+		text-align: center;
+		margin-top: 2rem;
+	}
+}
+
+@media (max-width: 365px) {
+	.home-img img,
+	.about-img img {
+		width: 90vw;
+	}
+}
