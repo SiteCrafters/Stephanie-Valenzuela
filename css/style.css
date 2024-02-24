@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Cursive:wght@300;400;500;600;700;800;900&display=swap");
+
+
 * {
 	margin: 0;
 	padding: 0;
@@ -135,7 +138,12 @@ span {
 	font-size: 5.6rem;
 	font-weight: 700;
 	line-height: 1.3;
-	font-family: cursive;
+}
+.home-content a {
+	font-size: 5.6rem;
+	font-weight: 700;
+	line-height: 1.3;
+	font-family: 'cursive';
 }
 
 .home-content p {
@@ -359,8 +367,7 @@ span {
 	padding: 10px;
 	margin-bottom: 20px;
 	font-size: 3.5rem;
-	font-weight: 1200;
-
+	font-weight: 900;
 }
 
 /* Footer */
@@ -371,12 +378,11 @@ span {
 	flex-wrap: wrap;
 	padding: 2rem 9%;
 	background: var(--second-bg-color);
-
 }
 
 .footer-text p {
 	font-size: 1.6rem;
-	font-weight:1200;
+	font-weight: 900;
 }
 
 .footer-iconTop a {
