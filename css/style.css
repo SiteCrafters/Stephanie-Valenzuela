@@ -486,7 +486,7 @@ span {
 }
 
 @media (max-width: 580px) {
-	.portfolio-container {
+	.portfolio {
 		grid-template-columns: 1fr;
 		display: none;
 	}
